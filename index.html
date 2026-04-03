@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Civil At Hand – Premier Civil Engineering Services</title>
+<meta name="description" content="Civil At Hand delivers world-class civil engineering services including AutoCAD design, structural engineering, 3D modeling, estimation, and site planning."/>
+<meta name="keywords" content="civil engineering, structural design, AutoCAD, 3D modeling, site planning, surveying, STP design, water tank design"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg: #f5f4f0;
+  --bg2: #eeece6;
+  --surface: #ffffff;
+  --surface2: #f0ede6;
+  --border: #ddd9ce;
+  --text: #1a1916;
+  --text2: #5a5750;
+  --text3: #8a8680;
+  --accent: #1a4fd6;
+  --accent2: #0d3ab5;
+  --accent3: #e8f0ff;
+  --gold: #c49a3c;
+  --gold2: #f0c14b;
+  --red: #d63031;
+  --green: #00b894;
+  --shadow: 0 2px 20px rgba(0,0,0,0.08);
+  --shadow2: 0 8px 40px rgba(0,0,0,0.12);
+  --shadow3: 0 20px 80px rgba(0,0,0,0.16);
+  --radius: 16px;
+  --radius2: 24px;
+  --radius3: 32px;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  --nav-h: 72px;
+}
+[data-theme="dark"] {
+  --bg: #0e0d0b;
+  --bg2: #161512;
+  --surface: #1c1b18;
+  --surface2: #242320;
+  --border: #2e2c28;
+  --text: #f0ede6;
+  --text2: #a8a49c;
+  --text3: #6a6660;
+  --accent: #4a7ef0;
+  --accent2: #6a94f4;
+  --accent3: #0f1e3a;
+  --shadow: 0 2px 20px rgba(0,0,0,0.4);
+  --shadow2: 0 8px 40px rgba(0,0,0,0.5);
+  --shadow3: 0 20px 80px rgba(0,0,0,0.6);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;transition:background var(--transition),color var(--transition);overflow-x:hidden}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px}
+::-webkit-scrollbar-thumb:hover{background:var(--text3)}
+
+/* SELECTION */
+::selection{background:var(--accent);color:#fff}
+
+/* ========== NAV ========== */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;padding:0 2rem;transition:all var(--transition);background:transparent}
+nav.scrolled{background:rgba(245,244,240,0.9);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
+[data-theme="dark"] nav.scrolled{background:rgba(14,13,11,0.9)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1400px;margin:0 auto}
+.nav-logo{font-family:var(--font-display);font-weight:800;font-size:1.4rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em;display:flex;align-items:center;gap:0.5rem}
+.nav-logo span{color:var(--accent)}
+.logo-icon{width:36px;height:36px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-icon svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.nav-links{display:flex;align-items:center;gap:0.25rem}
+.nav-links a{font-size:0.875rem;font-weight:500;color:var(--text2);text-decoration:none;padding:0.5rem 0.875rem;border-radius:8px;transition:all var(--transition)}
+.nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--surface2)}
+.nav-actions{display:flex;align-items:center;gap:0.75rem}
+.btn-theme{background:var(--surface2);border:1px solid var(--border);color:var(--text2);width:36px;height:36px;border-radius:9px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--transition);flex-shrink:0}
+.btn-theme:hover{color:var(--text);border-color:var(--text3)}
+.btn-theme svg{width:16px;height:16px}
+.btn-nav-cta{background:var(--accent);color:#fff;border:none;padding:0.5rem 1.25rem;border-radius:9px;font-size:0.875rem;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:all var(--transition);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem}
+.btn-nav-cta:hover{background:var(--accent2);transform:translateY(-1px);box-shadow:0 4px 16px rgba(26,79,214,0.3)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:var(--surface2);border:1px solid var(--border);border-radius:9px}
+.hamburger span{width:18px;height:2px;background:var(--text);border-radius:99px;transition:all var(--transition)}
+
+/* MOBILE MENU */
+.mobile-menu{position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:var(--bg);z-index:999;padding:2rem;display:none;flex-direction:column;gap:0.5rem;overflow-y:auto}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:1.1rem;font-weight:500;color:var(--text2);text-decoration:none;padding:1rem 1.25rem;border-radius:12px;transition:all var(--transition);border:1px solid transparent}
+.mobile-menu a:hover{color:var(--text);background:var(--surface);border-color:var(--border)}
+
+/* ========== HERO ========== */
+.hero{min-height:100vh;display:flex;align-items:center;padding:calc(var(--nav-h) + 2rem) 2rem 4rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:0.4}
+.hero-glow{position:absolute;top:10%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(26,79,214,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-glow2{position:absolute;bottom:-10%;left:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(196,154,60,0.1) 0%,transparent 70%);border-radius:50%}
+.hero-inner{max-width:1400px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent3);color:var(--accent);border:1px solid rgba(26,79,214,0.2);padding:0.4rem 1rem;border-radius:99px;font-size:0.8rem;font-weight:600;margin-bottom:1.5rem;letter-spacing:0.04em;text-transform:uppercase}
+.hero-badge-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(1.4)}}
+.hero-title{font-family:var(--font-display);font-size:clamp(2.8rem,5vw,4.5rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .accent{color:var(--accent)}
+.hero-title .gold{color:var(--gold)}
+.hero-sub{font-size:1.1rem;color:var(--text2);line-height:1.7;margin-bottom:2.5rem;max-width:480px;font-weight:300}
+.hero-actions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn-primary{background:var(--accent);color:#fff;border:none;padding:0.875rem 2rem;border-radius:12px;font-size:0.95rem;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:all var(--transition);display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,79,214,0.35)}
+.btn-secondary{background:transparent;color:var(--text);border:1.5px solid var(--border);padding:0.875rem 2rem;border-radius:12px;font-size:0.95rem;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:all var(--transition);display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none}
+.btn-secondary:hover{background:var(--surface);border-color:var(--text3);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column}
+.stat-num{font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--text);letter-spacing:-0.02em}
+.stat-label{font-size:0.8rem;color:var(--text3);font-weight:500;text-transform:uppercase;letter-spacing:0.05em}
+
+/* HERO VISUAL */
+.hero-visual{position:relative}
+.hero-card-main{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius2);padding:2rem;box-shadow:var(--shadow2);position:relative;overflow:hidden}
+.hero-card-main::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--gold))}
+.hero-map{width:100%;height:200px;background:linear-gradient(135deg,var(--accent3),var(--surface2));border-radius:12px;margin-bottom:1.5rem;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-map-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(26,79,214,0.1) 1px,transparent 1px),linear-gradient(90deg,rgba(26,79,214,0.1) 1px,transparent 1px);background-size:20px 20px}
+.hero-map-pin{width:40px;height:40px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(26,79,214,0.2),0 0 0 16px rgba(26,79,214,0.1);animation:ripple 2s infinite}
+@keyframes ripple{0%,100%{box-shadow:0 0 0 8px rgba(26,79,214,0.2),0 0 0 16px rgba(26,79,214,0.1)}50%{box-shadow:0 0 0 12px rgba(26,79,214,0.15),0 0 0 24px rgba(26,79,214,0.05)}}
+.hero-map-pin svg{width:18px;height:18px;fill:#fff}
+.project-list{display:flex;flex-direction:column;gap:0.75rem}
+.project-item{display:flex;align-items:center;gap:0.875rem;padding:0.75rem;background:var(--bg);border-radius:10px;border:1px solid var(--border)}
+.project-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.project-dot.blue{background:var(--accent)}
+.project-dot.gold{background:var(--gold)}
+.project-dot.green{background:var(--green)}
+.project-info{flex:1;min-width:0}
+.project-name{font-size:0.85rem;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.project-type{font-size:0.75rem;color:var(--text3)}
+.project-status{font-size:0.72rem;font-weight:600;padding:0.2rem 0.5rem;border-radius:99px}
+.project-status.active{background:rgba(0,184,148,0.1);color:var(--green)}
+.project-status.progress{background:rgba(26,79,214,0.1);color:var(--accent)}
+.project-status.done{background:rgba(196,154,60,0.1);color:var(--gold)}
+.hero-float1{position:absolute;top:-20px;right:-20px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:0.75rem 1rem;box-shadow:var(--shadow2);display:flex;align-items:center;gap:0.5rem;animation:float1 4s ease-in-out infinite}
+.hero-float2{position:absolute;bottom:-20px;left:-20px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:0.75rem 1rem;box-shadow:var(--shadow2);animation:float2 5s ease-in-out infinite}
+@keyframes float1{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-8px) rotate(1deg)}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(8px) rotate(-1deg)}}
+.float-label{font-size:0.75rem;font-weight:600;color:var(--text);white-space:nowrap}
+.float-sub{font-size:0.68rem;color:var(--text3)}
+.float-icon{font-size:1.2rem}
+
+/* ========== SECTIONS ========== */
+.section{padding:6rem 2rem}
+.section-alt{background:var(--bg2)}
+.section-inner{max-width:1400px;margin:0 auto}
+.section-label{display:inline-flex;align-items:center;gap:0.5rem;color:var(--accent);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem}
+.section-label::before{content:'';width:20px;height:2px;background:var(--accent);border-radius:99px}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin-bottom:1.25rem}
+.section-sub{font-size:1.05rem;color:var(--text2);max-width:560px;line-height:1.7;font-weight:300}
+.section-header{margin-bottom:4rem}
+.section-header.center{text-align:center}
+.section-header.center .section-sub{margin:0 auto}
+.section-header.center .section-label{justify-content:center}
+
+/* ========== SERVICES ========== */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+.service-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius2);padding:2rem;cursor:pointer;transition:all var(--transition);position:relative;overflow:hidden}
+.service-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(26,79,214,0.03));opacity:0;transition:opacity var(--transition)}
+.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2);border-color:rgba(26,79,214,0.3)}
+.service-card:hover::after{opacity:1}
+.service-card:hover .service-arrow{transform:translate(4px,-4px)}
+.service-icon{width:56px;height:56px;background:var(--accent3);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;font-size:1.6rem;transition:all var(--transition);position:relative;z-index:1}
+.service-card:hover .service-icon{background:var(--accent);transform:scale(1.05)}
+.service-card:hover .service-icon svg{stroke:#fff}
+.service-icon svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:all var(--transition)}
+.service-name{font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;position:relative;z-index:1}
+.service-desc{font-size:0.9rem;color:var(--text2);line-height:1.65;margin-bottom:1.25rem;font-weight:300;position:relative;z-index:1}
+.service-arrow{width:28px;height:28px;background:var(--bg2);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all var(--transition);position:relative;z-index:1}
+.service-arrow svg{width:14px;height:14px;stroke:var(--text3);fill:none;stroke-width:2}
+
+/* ========== WHY US ========== */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.why-visual{position:relative}
+.why-img{width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,var(--accent3),var(--surface2));border-radius:var(--radius2);display:flex;align-items:center;justify-content:center;font-size:6rem;position:relative;overflow:hidden;border:1px solid var(--border)}
+.why-img-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(26,79,214,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(26,79,214,0.08) 1px,transparent 1px);background-size:30px 30px}
+.why-img-content{position:relative;z-index:1;text-align:center}
+.why-img-icon{font-size:5rem;display:block;margin-bottom:1rem}
+.why-img-label{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--accent)}
+.why-badge-tl{position:absolute;top:-16px;left:-16px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1rem;box-shadow:var(--shadow2);text-align:center}
+.why-badge-br{position:absolute;bottom:-16px;right:-16px;background:var(--accent);border-radius:14px;padding:1rem 1.25rem;box-shadow:0 8px 24px rgba(26,79,214,0.3);color:#fff}
+.why-badge-num{font-family:var(--font-display);font-size:1.6rem;font-weight:800;display:block}
+.why-badge-lbl{font-size:0.7rem;font-weight:600;opacity:0.85;text-transform:uppercase;letter-spacing:0.05em}
+.why-features{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.why-feature{padding:1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);transition:all var(--transition)}
+.why-feature:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow)}
+.why-feature-icon{font-size:1.5rem;margin-bottom:0.5rem}
+.why-feature-title{font-weight:700;font-size:0.9rem;margin-bottom:0.3rem}
+.why-feature-desc{font-size:0.82rem;color:var(--text2);line-height:1.5;font-weight:300}
+
+/* ========== PROCESS ========== */
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.process-steps::before{content:'';position:absolute;top:40px;left:calc(12.5% + 20px);right:calc(12.5% + 20px);height:1px;background:linear-gradient(90deg,var(--accent),var(--gold),var(--accent));z-index:0}
+.process-step{text-align:center;padding:0 1rem;position:relative;z-index:1}
+.process-num{width:80px;height:80px;background:var(--surface);border:2px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-family:var(--font-display);font-size:1.4rem;font-weight:800;transition:all var(--transition);position:relative}
+.process-step:hover .process-num{background:var(--accent);border-color:var(--accent);color:#fff;transform:scale(1.08)}
+.process-step:nth-child(1) .process-num{background:var(--accent);border-color:var(--accent);color:#fff}
+.process-title{font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:0.5rem}
+.process-desc{font-size:0.85rem;color:var(--text2);line-height:1.6;font-weight:300}
+
+/* ========== PORTFOLIO ========== */
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.portfolio-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius2);overflow:hidden;cursor:pointer;transition:all var(--transition)}
+.portfolio-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2)}
+.portfolio-img{height:200px;background:linear-gradient(135deg,var(--accent3),var(--surface2));position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+.portfolio-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.6),transparent);opacity:0;transition:opacity var(--transition)}
+.portfolio-card:hover .portfolio-img-overlay{opacity:1}
+.portfolio-tags{position:absolute;bottom:1rem;left:1rem;display:flex;gap:0.4rem;opacity:0;transform:translateY(8px);transition:all var(--transition)}
+.portfolio-card:hover .portfolio-tags{opacity:1;transform:translateY(0)}
+.portfolio-tag{background:rgba(255,255,255,0.95);color:var(--text);font-size:0.72rem;font-weight:600;padding:0.25rem 0.6rem;border-radius:99px}
+.portfolio-body{padding:1.5rem}
+.portfolio-title{font-family:var(--font-display);font-size:1.05rem;font-weight:700;margin-bottom:0.4rem}
+.portfolio-meta{font-size:0.82rem;color:var(--text3);display:flex;align-items:center;gap:0.5rem}
+
+/* ========== TESTIMONIALS ========== */
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.testimonial-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius2);padding:2rem;transition:all var(--transition)}
+.testimonial-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2);border-color:var(--accent)}
+.testimonial-quote{font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:1rem;font-family:Georgia,serif}
+.testimonial-text{font-size:0.95rem;color:var(--text2);line-height:1.75;font-weight:300;margin-bottom:1.5rem;font-style:italic}
+.testimonial-author{display:flex;align-items:center;gap:0.75rem}
+.testimonial-avatar{width:44px;height:44px;border-radius:50%;background:var(--accent3);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:0.9rem;color:var(--accent);flex-shrink:0}
+.testimonial-name{font-weight:700;font-size:0.9rem}
+.testimonial-role{font-size:0.78rem;color:var(--text3)}
+.stars{display:flex;gap:2px;margin-bottom:1rem}
+.star{width:14px;height:14px;fill:var(--gold2)}
+
+/* ========== BLOG ========== */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.blog-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius2);overflow:hidden;cursor:pointer;transition:all var(--transition)}
+.blog-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2)}
+.blog-img{height:180px;background:linear-gradient(135deg,var(--accent3),var(--surface2));display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative}
+.blog-cat{position:absolute;top:1rem;left:1rem;background:var(--accent);color:#fff;font-size:0.72rem;font-weight:700;padding:0.3rem 0.7rem;border-radius:99px;text-transform:uppercase;letter-spacing:0.04em}
+.blog-body{padding:1.5rem}
+.blog-title{font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:0.5rem;line-height:1.35}
+.blog-desc{font-size:0.85rem;color:var(--text2);line-height:1.6;font-weight:300;margin-bottom:1rem}
+.blog-meta{display:flex;align-items:center;justify-content:space-between;font-size:0.78rem;color:var(--text3)}
+.blog-read{color:var(--accent);font-weight:600}
+
+/* ========== REQUEST FORM ========== */
+.request-section{background:var(--bg2)}
+.request-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start}
+.request-info{position:sticky;top:calc(var(--nav-h) + 2rem)}
+.request-features{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+.request-feature{display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:12px}
+.request-feature-icon{width:36px;height:36px;background:var(--accent3);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.request-feature-icon svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.request-feature-title{font-weight:700;font-size:0.875rem;margin-bottom:0.2rem}
+.request-feature-desc{font-size:0.8rem;color:var(--text2);font-weight:300}
+
+/* FORM */
+.form-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius2);padding:2.5rem;box-shadow:var(--shadow)}
+.form-card::before{content:'';display:block;height:3px;background:linear-gradient(90deg,var(--accent),var(--gold));border-radius:99px;margin-bottom:2rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.25rem}
+.form-group{margin-bottom:1.25rem}
+.form-label{display:block;font-size:0.82rem;font-weight:600;color:var(--text2);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.04em}
+.form-input,.form-select,.form-textarea{width:100%;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:0.75rem 1rem;font-family:var(--font-body);font-size:0.9rem;color:var(--text);transition:all var(--transition);outline:none}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,79,214,0.1);background:var(--surface)}
+.form-textarea{resize:vertical;min-height:120px;line-height:1.6}
+.form-select{cursor:pointer}
+.upload-area{border:2px dashed var(--border);border-radius:12px;padding:2rem;text-align:center;cursor:pointer;transition:all var(--transition);background:var(--bg)}
+.upload-area:hover,.upload-area.drag{border-color:var(--accent);background:var(--accent3)}
+.upload-icon{font-size:2rem;margin-bottom:0.5rem}
+.upload-label{font-weight:600;font-size:0.9rem;margin-bottom:0.3rem}
+.upload-sub{font-size:0.8rem;color:var(--text3)}
+.form-submit{width:100%;background:var(--accent);color:#fff;border:none;padding:1rem 2rem;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:all var(--transition);display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:0.5rem}
+.form-submit:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,79,214,0.3)}
+.form-submit:active{transform:translateY(0)}
+
+/* SUCCESS STATE */
+.success-state{display:none;text-align:center;padding:3rem 2rem}
+.success-state.show{display:block}
+.success-icon{width:80px;height:80px;background:rgba(0,184,148,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:2.5rem}
+.success-title{font-family:var(--font-display);font-size:1.6rem;font-weight:800;margin-bottom:0.75rem}
+.success-desc{color:var(--text2);font-size:0.95rem;line-height:1.7}
+
+/* ========== CHAT WIDGET ========== */
+.chat-widget{position:fixed;bottom:2rem;right:2rem;z-index:900}
+.chat-btn{width:56px;height:56px;background:var(--accent);border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(26,79,214,0.4);transition:all var(--transition)}
+.chat-btn:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(26,79,214,0.5)}
+.chat-btn svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.chat-window{position:absolute;bottom:70px;right:0;width:340px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius2);box-shadow:var(--shadow3);overflow:hidden;display:none;flex-direction:column}
+.chat-window.open{display:flex}
+.chat-header{background:var(--accent);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:0.75rem;color:#fff}
+.chat-header-avatar{width:36px;height:36px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.chat-header-name{font-weight:700;font-size:0.95rem}
+.chat-header-status{font-size:0.75rem;opacity:0.8}
+.chat-close{margin-left:auto;background:transparent;border:none;color:#fff;cursor:pointer;opacity:0.8;padding:4px}
+.chat-close:hover{opacity:1}
+.chat-close svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+.chat-messages{padding:1.25rem;display:flex;flex-direction:column;gap:1rem;max-height:280px;overflow-y:auto;flex:1}
+.chat-msg{max-width:80%;padding:0.75rem 1rem;border-radius:14px;font-size:0.875rem;line-height:1.5}
+.chat-msg.bot{background:var(--bg);border:1px solid var(--border);border-bottom-left-radius:4px;align-self:flex-start}
+.chat-msg.user{background:var(--accent);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.chat-quick{padding:0.75rem 1.25rem;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:0.5rem}
+.chat-quick-btn{background:var(--accent3);color:var(--accent);border:1px solid rgba(26,79,214,0.2);border-radius:99px;padding:0.3rem 0.75rem;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:all var(--transition)}
+.chat-quick-btn:hover{background:var(--accent);color:#fff}
+.chat-input-row{padding:1rem 1.25rem;border-top:1px solid var(--border);display:flex;gap:0.5rem}
+.chat-input{flex:1;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:0.6rem 0.875rem;font-family:var(--font-body);font-size:0.875rem;color:var(--text);outline:none;transition:border-color var(--transition)}
+.chat-input:focus{border-color:var(--accent)}
+.chat-send{background:var(--accent);border:none;border-radius:10px;padding:0.6rem 0.875rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--transition)}
+.chat-send:hover{background:var(--accent2)}
+.chat-send svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.chat-badge{position:absolute;top:-4px;right:-4px;width:18px;height:18px;background:#ef4444;border-radius:50%;font-size:0.65rem;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid var(--bg)}
+
+/* WA BUTTON */
+.wa-btn{position:fixed;bottom:6.5rem;right:2rem;z-index:900;width:50px;height:50px;background:#25D366;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);transition:all var(--transition)}
+.wa-btn:hover{transform:scale(1.08)}
+.wa-btn svg{width:22px;height:22px;fill:#fff}
+
+/* ========== CONTACT ========== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem}
+.contact-item{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:14px;transition:all var(--transition)}
+.contact-item:hover{border-color:var(--accent);transform:translateX(4px)}
+.contact-item-icon{width:44px;height:44px;background:var(--accent3);border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-item-icon svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.contact-item-label{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--text3);margin-bottom:0.2rem}
+.contact-item-value{font-weight:600;font-size:0.95rem}
+.map-embed{width:100%;height:360px;background:linear-gradient(135deg,var(--accent3),var(--surface2));border-radius:var(--radius2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.map-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:30px 30px}
+.map-content{position:relative;z-index:1;text-align:center}
+.map-icon{font-size:3rem;margin-bottom:0.75rem}
+.map-label{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--accent)}
+.map-sub{font-size:0.85rem;color:var(--text2);margin-top:0.25rem}
+
+/* ========== MODAL ========== */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);z-index:2000;display:none;align-items:center;justify-content:center;padding:1rem}
+.modal-overlay.open{display:flex}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius2);max-width:600px;width:100%;max-height:90vh;overflow-y:auto;position:relative;padding:2.5rem;box-shadow:var(--shadow3)}
+.modal-close{position:absolute;top:1.25rem;right:1.25rem;background:var(--bg2);border:1px solid var(--border);color:var(--text2);width:32px;height:32px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--transition)}
+.modal-close:hover{color:var(--text);border-color:var(--text3)}
+.modal-close svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.modal-icon{font-size:3rem;margin-bottom:1rem}
+.modal-title{font-family:var(--font-display);font-size:1.6rem;font-weight:800;margin-bottom:0.75rem}
+.modal-body{color:var(--text2);font-size:0.9rem;line-height:1.75;font-weight:300}
+.modal-body h4{font-family:var(--font-display);font-weight:700;color:var(--text);font-size:1rem;margin:1.25rem 0 0.5rem}
+.modal-body ul{padding-left:1.25rem;display:flex;flex-direction:column;gap:0.3rem}
+
+/* ========== AUTH MODAL ========== */
+.auth-tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:2rem;margin-top:1rem}
+.auth-tab{flex:1;padding:0.75rem;text-align:center;background:transparent;border:none;font-family:var(--font-body);font-size:0.9rem;font-weight:600;color:var(--text3);cursor:pointer;transition:all var(--transition);border-bottom:2px solid transparent}
+.auth-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.auth-form{display:none}
+.auth-form.active{display:block}
+
+/* ========== DASHBOARD ========== */
+.dashboard-modal .modal{max-width:800px}
+.dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.dash-welcome{font-family:var(--font-display);font-size:1.4rem;font-weight:800}
+.dash-sub{font-size:0.85rem;color:var(--text3);margin-top:0.2rem}
+.dash-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
+.dash-stat{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1rem;text-align:center}
+.dash-stat-num{font-family:var(--font-display);font-size:1.6rem;font-weight:800}
+.dash-stat-lbl{font-size:0.72rem;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:0.05em}
+.dash-requests{display:flex;flex-direction:column;gap:0.75rem}
+.dash-req{display:flex;align-items:center;gap:1rem;padding:1rem;background:var(--bg);border:1px solid var(--border);border-radius:12px}
+.dash-req-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.dash-req-name{font-weight:600;font-size:0.875rem;flex:1}
+.dash-req-type{font-size:0.78rem;color:var(--text3)}
+.dash-req-status{font-size:0.72rem;font-weight:600;padding:0.25rem 0.6rem;border-radius:99px}
+.dash-req-status.review{background:rgba(196,154,60,0.1);color:var(--gold)}
+.dash-req-status.progress{background:rgba(26,79,214,0.1);color:var(--accent)}
+.dash-req-status.complete{background:rgba(0,184,148,0.1);color:var(--green)}
+
+/* ========== FOOTER ========== */
+footer{background:var(--surface);border-top:1px solid var(--border);padding:4rem 2rem 2rem}
+.footer-inner{max-width:1400px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-brand .nav-logo{margin-bottom:1rem;display:inline-flex}
+.footer-desc{font-size:0.875rem;color:var(--text2);line-height:1.7;max-width:280px;font-weight:300}
+.footer-socials{display:flex;gap:0.5rem;margin-top:1.25rem}
+.footer-social{width:36px;height:36px;background:var(--bg2);border:1px solid var(--border);border-radius:9px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--transition);text-decoration:none;color:var(--text3)}
+.footer-social:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.footer-social svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.footer-col-title{font-family:var(--font-display);font-size:0.875rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:1.25rem;color:var(--text)}
+.footer-links{display:flex;flex-direction:column;gap:0.6rem}
+.footer-links a{font-size:0.875rem;color:var(--text2);text-decoration:none;transition:color var(--transition);font-weight:300}
+.footer-links a:hover{color:var(--accent)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:0.82rem;color:var(--text3)}
+.footer-badge{font-size:0.78rem;color:var(--text3);display:flex;align-items:center;gap:0.4rem}
+.footer-badge span{color:var(--accent);font-weight:600}
+
+/* ========== LOADER ========== */
+#page-loader{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;transition:opacity 0.5s,visibility 0.5s}
+#page-loader.hide{opacity:0;visibility:hidden}
+.loader-logo{font-family:var(--font-display);font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+.loader-logo span{color:var(--accent)}
+.loader-bar{width:200px;height:3px;background:var(--border);border-radius:99px;overflow:hidden}
+.loader-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--gold));border-radius:99px;animation:load 1.8s ease forwards}
+@keyframes load{0%{width:0}60%{width:75%}100%{width:100%}}
+.loader-text{font-size:0.8rem;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;animation:blink 1.5s infinite}
+@keyframes blink{0%,100%{opacity:0.4}50%{opacity:1}}
+
+/* ========== SCROLL TOP ========== */
+.scroll-top{position:fixed;bottom:2rem;left:2rem;width:44px;height:44px;background:var(--surface);border:1px solid var(--border);border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--transition);opacity:0;visibility:hidden;z-index:800}
+.scroll-top.show{opacity:1;visibility:visible}
+.scroll-top:hover{background:var(--accent);border-color:var(--accent)}
+.scroll-top:hover svg{stroke:#fff}
+.scroll-top svg{width:18px;height:18px;stroke:var(--text3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:stroke var(--transition)}
+
+/* ========== CTA BANNER ========== */
+.cta-banner{background:linear-gradient(135deg,var(--accent),var(--accent2));padding:5rem 2rem;position:relative;overflow:hidden}
+.cta-banner-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:40px 40px}
+.cta-banner-inner{max-width:700px;margin:0 auto;text-align:center;position:relative;z-index:1;color:#fff}
+.cta-banner-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:1.25rem;line-height:1.1}
+.cta-banner-sub{font-size:1.05rem;opacity:0.85;line-height:1.7;margin-bottom:2.5rem;font-weight:300}
+.btn-white{background:#fff;color:var(--accent);border:none;padding:1rem 2.5rem;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;font-family:var(--font-body);transition:all var(--transition);display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2)}
+.btn-white-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.5);padding:1rem 2.5rem;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;font-family:var(--font-body);transition:all var(--transition);display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none}
+.btn-white-outline:hover{background:rgba(255,255,255,0.1);border-color:#fff;transform:translateY(-2px)}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* ========== ANIMATIONS ========== */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.fade-up.delay-1{transition-delay:0.1s}
+.fade-up.delay-2{transition-delay:0.2s}
+.fade-up.delay-3{transition-delay:0.3s}
+.fade-up.delay-4{transition-delay:0.4s}
+.fade-up.delay-5{transition-delay:0.5s}
+.fade-up.delay-6{transition-delay:0.6s}
+.fade-left{opacity:0;transform:translateX(-30px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-left.visible{opacity:1;transform:translateX(0)}
+.fade-right{opacity:0;transform:translateX(30px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-right.visible{opacity:1;transform:translateX(0)}
+.scale-in{opacity:0;transform:scale(0.9);transition:opacity 0.5s ease,transform 0.5s ease}
+.scale-in.visible{opacity:1;transform:scale(1)}
+
+/* ========== COUNTER ========== */
+.counter-running{font-variant-numeric:tabular-nums}
+
+/* ========== SKELETON ========== */
+.skeleton{background:linear-gradient(90deg,var(--border) 25%,var(--surface2) 50%,var(--border) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:8px}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* ========== TABS ========== */
+.tab-nav{display:flex;gap:0.5rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.tab-btn{background:var(--surface);border:1.5px solid var(--border);color:var(--text2);padding:0.6rem 1.25rem;border-radius:10px;font-size:0.875rem;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:all var(--transition)}
+.tab-btn.active,.tab-btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:1100px){
+  .hero-inner,.why-grid{grid-template-columns:1fr;gap:3rem}
+  .hero-visual{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .process-steps{grid-template-columns:repeat(2,1fr);gap:2rem}
+  .process-steps::before{display:none}
+  .portfolio-grid,.testimonials-grid,.blog-grid{grid-template-columns:repeat(2,1fr)}
+  .why-features{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .request-inner{grid-template-columns:1fr}
+  .request-info{position:static}
+}
+@media(max-width:768px){
+  .nav-links,.btn-nav-cta{display:none}
+  .hamburger{display:flex}
+  .hero-title{font-size:2.4rem}
+  .hero-stats{gap:1.5rem}
+  .portfolio-grid,.testimonials-grid,.blog-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .why-features{grid-template-columns:1fr}
+  .dash-stats{grid-template-columns:repeat(2,1fr)}
+  .process-steps{grid-template-columns:1fr}
+  .section{padding:4rem 1.5rem}
+  .hero{padding:calc(var(--nav-h) + 2rem) 1.5rem 3rem}
+  .chat-window{width:300px;right:-10px}
+}
+</style>
+</head>
+<body>
+
+<!-- PAGE LOADER -->
+<div id="page-loader">
+  <div class="loader-logo">Civil <span>At Hand</span></div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <div class="loader-text">Loading experience...</div>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" onclick="scrollToTop()">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21V11h6v10"/></svg>
+      </div>
+      Civil <span>At Hand</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#portfolio">Projects</a>
+      <a href="#process">Process</a>
+      <a href="#blog">Knowledge</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-theme" id="theme-toggle" aria-label="Toggle theme">
+        <svg id="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg id="moon-icon" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="btn-nav-cta" onclick="document.getElementById('auth-modal').classList.add('open')">
+        <svg style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Sign In
+      </button>
+      <a href="#request" class="btn-nav-cta" style="background:var(--gold);color:#000">Request Work</a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#portfolio" onclick="toggleMenu()">Projects</a>
+  <a href="#process" onclick="toggleMenu()">Process</a>
+  <a href="#blog" onclick="toggleMenu()">Knowledge Hub</a>
+  <a href="#testimonials" onclick="toggleMenu()">Testimonials</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="#request" onclick="toggleMenu()" style="background:var(--accent);color:#fff;border-color:var(--accent)">📋 Request Work</a>
+  <a href="#" onclick="document.getElementById('auth-modal').classList.add('open');toggleMenu()">👤 Sign In / Sign Up</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge fade-up">
+        <span class="hero-badge-dot"></span>
+        Trusted by 500+ Projects
+      </div>
+      <h1 class="hero-title fade-up delay-1">
+        <span class="line">Engineering</span>
+        <span class="line accent">Excellence</span>
+        <span class="line">At Your <span class="gold">Hand</span></span>
+      </h1>
+      <p class="hero-sub fade-up delay-2">
+        From AutoCAD blueprints to complete structural solutions — we deliver precision-engineered civil services that turn your vision into enduring infrastructure.
+      </p>
+      <div class="hero-actions fade-up delay-3">
+        <a href="#request" class="btn-primary">
+          <svg style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          Start a Project
+        </a>
+        <a href="#services" class="btn-secondary">
+          <svg style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          Explore Services
+        </a>
+      </div>
+      <div class="hero-stats fade-up delay-4">
+        <div class="stat">
+          <span class="stat-num counter" data-target="500">0</span>
+          <span class="stat-label">Projects Done</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num counter" data-target="12">0</span>
+          <span class="stat-label">Years Active</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num counter" data-target="98">0</span>
+          <span class="stat-label">% Satisfaction</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num counter" data-target="50">0</span>
+          <span class="stat-label">Expert Engineers</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual fade-right">
+      <div class="hero-float1">
+        <span class="float-icon">📐</span>
+        <div>
+          <div class="float-label">AutoCAD Design</div>
+          <div class="float-sub">Precision blueprints</div>
+        </div>
+      </div>
+      <div class="hero-card-main">
+        <div class="hero-map">
+          <div class="hero-map-grid"></div>
+          <div class="hero-map-pin">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+        </div>
+        <div class="project-list">
+          <div class="project-item">
+            <div class="project-dot blue"></div>
+            <div class="project-info">
+              <div class="project-name">Riverside Bridge Complex</div>
+              <div class="project-type">Structural Design + AutoCAD</div>
+            </div>
+            <span class="project-status active">Active</span>
+          </div>
+          <div class="project-item">
+            <div class="project-dot gold"></div>
+            <div class="project-info">
+              <div class="project-name">Metro Water Treatment</div>
+              <div class="project-type">STP Design + Planning</div>
+            </div>
+            <span class="project-status progress">In Progress</span>
+          </div>
+          <div class="project-item">
+            <div class="project-dot green"></div>
+            <div class="project-info">
+              <div class="project-name">Corporate Tower G+15</div>
+              <div class="project-type">3D Modeling + Estimation</div>
+            </div>
+            <span class="project-status done">Completed</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-float2">
+        <div class="float-label">✅ ISO 9001 Certified</div>
+        <div class="float-sub">Quality Assured Engineering</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-inner">
+    <div class="section-header center fade-up">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">Comprehensive Civil<br>Engineering Services</h2>
+      <p class="section-sub">From concept to completion, we provide end-to-end civil engineering solutions with precision, expertise, and innovation.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up delay-1" onclick="openServiceModal('autocad')">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+        </div>
+        <div class="service-name">AutoCAD Design</div>
+        <div class="service-desc">Precision 2D drafting and technical drawings for all civil structures including architectural, structural, and utility plans.</div>
+        <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      </div>
+      <div class="service-card fade-up delay-2" onclick="openServiceModal('structural')">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21V11h6v10"/></svg>
+        </div>
+        <div class="service-name">Structural Design</div>
+        <div class="service-desc">Advanced structural analysis and design for residential, commercial, and industrial buildings using RCC and steel frameworks.</div>
+        <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      </div>
+      <div class="service-card fade-up delay-3" onclick="openServiceModal('estimation')">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="service-name">Estimation & Costing</div>
+        <div class="service-desc">Detailed quantity surveying, BOQ preparation, and accurate cost estimation for project budgeting and financial planning.</div>
+        <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      </div>
+      <div class="service-card fade-up delay-4" onclick="openServiceModal('planning')">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="service-name">Site Planning</div>
+        <div class="service-desc">Comprehensive site analysis, land use planning, zoning compliance, and master planning for optimal project development.</div>
+        <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      </div>
+      <div class="service-card fade-up delay-5" onclick="openServiceModal('surveying')">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="service-name">Surveying</div>
+        <div class="service-desc">Topographic, boundary, and contour surveys using advanced GPS/total station equipment for accurate site measurements.</div>
+        <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      </div>
+      <div class="service-card fade-up delay-6" onclick="openServiceModal('3d')">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="service-name">3D Modeling</div>
+        <div class="service-desc">Photorealistic 3D visualization and BIM models for design validation, client presentations, and construction coordination.</div>
+        <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      </div>
+      <div class="service-card fade-up delay-1" onclick="openServiceModal('watertank')">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+        </div>
+        <div class="service-name">Water Tank Design</div>
+        <div class="service-desc">Design and structural analysis of elevated, underground, and overhead water storage tanks compliant with IS codes.</div>
+        <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      </div>
+      <div class="service-card fade-up delay-2" onclick="openServiceModal('stp')">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="service-name">STP Design</div>
+        <div class="service-desc">Sewage Treatment Plant design including layout planning, hydraulic calculations, and equipment specifications for eco-compliance.</div>
+        <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section section-alt" id="about">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div class="why-visual fade-left">
+        <div class="why-img">
+          <div class="why-img-bg"></div>
+          <div class="why-img-content">
+            <span class="why-img-icon">🏗️</span>
+            <div class="why-img-label">Built to Last</div>
+          </div>
+        </div>
+        <div class="why-badge-tl">
+          <div class="why-badge-num">ISO</div>
+          <div class="why-badge-lbl" style="color:var(--text3)">9001 Certified</div>
+        </div>
+        <div class="why-badge-br">
+          <span class="why-badge-num">500+</span>
+          <span class="why-badge-lbl">Projects</span>
+        </div>
+      </div>
+      <div class="fade-right">
+        <div class="section-label">Why Civil At Hand</div>
+        <h2 class="section-title">Engineering You Can<br>Trust, Every Time</h2>
+        <p class="section-sub" style="margin-bottom:2rem">We combine deep technical expertise with modern tools and a client-first approach to deliver engineering solutions that stand the test of time.</p>
+        <div class="why-features">
+          <div class="why-feature">
+            <div class="why-feature-icon">⚡</div>
+            <div class="why-feature-title">Fast Turnaround</div>
+            <div class="why-feature-desc">Rapid delivery without compromising quality. Most projects delivered ahead of schedule.</div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-icon">🎯</div>
+            <div class="why-feature-title">Precision Engineering</div>
+            <div class="why-feature-desc">Zero-tolerance approach to accuracy in every calculation, drawing, and design.</div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-icon">🛡️</div>
+            <div class="why-feature-title">Code Compliance</div>
+            <div class="why-feature-desc">All designs adhere to IS, BNBC, and international civil engineering standards.</div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-icon">💡</div>
+            <div class="why-feature-title">Innovative Solutions</div>
+            <div class="why-feature-desc">Modern methodologies and BIM technology for smarter, cost-effective designs.</div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-icon">🤝</div>
+            <div class="why-feature-title">Client Partnership</div>
+            <div class="why-feature-desc">Transparent communication and dedicated support throughout every phase.</div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-icon">📊</div>
+            <div class="why-feature-title">Data-Driven Design</div>
+            <div class="why-feature-desc">Analysis-backed decisions for optimal structural performance and cost savings.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="section-inner">
+    <div class="section-header center fade-up">
+      <div class="section-label">How We Work</div>
+      <h2 class="section-title">Our Streamlined<br>4-Step Process</h2>
+      <p class="section-sub">A clear, collaborative workflow designed to keep you informed and in control from consultation to delivery.</p>
+    </div>
+    <div class="process-steps fade-up">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <div class="process-title">Consultation</div>
+        <div class="process-desc">We understand your vision, requirements, site conditions, and project goals through detailed discussion.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <div class="process-title">Proposal & Planning</div>
+        <div class="process-desc">Detailed scope, timeline, deliverables, and cost estimate are prepared and shared for your approval.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <div class="process-title">Design & Execution</div>
+        <div class="process-desc">Our expert engineers execute precise designs with regular progress updates and client checkpoints.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">04</div>
+        <div class="process-title">Delivery & Support</div>
+        <div class="process-desc">Final deliverables with full documentation, revision support, and ongoing technical assistance.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section section-alt" id="portfolio">
+  <div class="section-inner">
+    <div class="section-header fade-up" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+      <div>
+        <div class="section-label">Our Work</div>
+        <h2 class="section-title">Featured Projects</h2>
+      </div>
+      <div class="tab-nav" style="margin-bottom:0">
+        <button class="tab-btn active" onclick="filterPortfolio('all',this)">All</button>
+        <button class="tab-btn" onclick="filterPortfolio('structural',this)">Structural</button>
+        <button class="tab-btn" onclick="filterPortfolio('water',this)">Water</button>
+        <button class="tab-btn" onclick="filterPortfolio('planning',this)">Planning</button>
+      </div>
+    </div>
+    <div class="portfolio-grid" id="portfolio-grid" style="margin-top:2rem">
+      <div class="portfolio-card fade-up delay-1" data-cat="structural" onclick="openProjectModal('p1')">
+        <div class="portfolio-img" style="background:linear-gradient(135deg,#1a4fd610,#0d3ab510);">
+          🌉
+          <div class="portfolio-img-overlay"></div>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Structural</span>
+            <span class="portfolio-tag">AutoCAD</span>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-title">Riverside Pedestrian Bridge</div>
+          <div class="portfolio-meta">📍 Mumbai &nbsp;•&nbsp; Completed 2023</div>
+        </div>
+      </div>
+      <div class="portfolio-card fade-up delay-2" data-cat="water" onclick="openProjectModal('p2')">
+        <div class="portfolio-img" style="background:linear-gradient(135deg,#00b89410,#00634010);">
+          🏭
+          <div class="portfolio-img-overlay"></div>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">STP Design</span>
+            <span class="portfolio-tag">Planning</span>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-title">Metro Water Treatment Plant</div>
+          <div class="portfolio-meta">📍 Delhi &nbsp;•&nbsp; Completed 2023</div>
+        </div>
+      </div>
+      <div class="portfolio-card fade-up delay-3" data-cat="structural" onclick="openProjectModal('p3')">
+        <div class="portfolio-img" style="background:linear-gradient(135deg,#c49a3c10,#f0c14b10);">
+          🏢
+          <div class="portfolio-img-overlay"></div>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">3D Modeling</span>
+            <span class="portfolio-tag">Estimation</span>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-title">Corporate Tower G+20</div>
+          <div class="portfolio-meta">📍 Pune &nbsp;•&nbsp; Ongoing 2024</div>
+        </div>
+      </div>
+      <div class="portfolio-card fade-up delay-1" data-cat="planning" onclick="openProjectModal('p4')">
+        <div class="portfolio-img" style="background:linear-gradient(135deg,#6c5ce710,#a29bfe10);">
+          🏘️
+          <div class="portfolio-img-overlay"></div>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Site Planning</span>
+            <span class="portfolio-tag">Surveying</span>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-title">Township Master Plan – 50 Acres</div>
+          <div class="portfolio-meta">📍 Bangalore &nbsp;•&nbsp; Completed 2022</div>
+        </div>
+      </div>
+      <div class="portfolio-card fade-up delay-2" data-cat="water" onclick="openProjectModal('p5')">
+        <div class="portfolio-img" style="background:linear-gradient(135deg,#0984e310,#74b9ff10);">
+          🛢️
+          <div class="portfolio-img-overlay"></div>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Water Tank</span>
+            <span class="portfolio-tag">Structural</span>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-title">2 ML Elevated Water Tower</div>
+          <div class="portfolio-meta">📍 Hyderabad &nbsp;•&nbsp; Completed 2023</div>
+        </div>
+      </div>
+      <div class="portfolio-card fade-up delay-3" data-cat="planning" onclick="openProjectModal('p6')">
+        <div class="portfolio-img" style="background:linear-gradient(135deg,#d6336c10,#f06595 10);">
+          🛣️
+          <div class="portfolio-img-overlay"></div>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Road Design</span>
+            <span class="portfolio-tag">Drainage</span>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-title">Highway Bypass 18km</div>
+          <div class="portfolio-meta">📍 Chennai &nbsp;•&nbsp; Completed 2022</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="section-inner">
+    <div class="section-header center fade-up">
+      <div class="section-label">Client Reviews</div>
+      <h2 class="section-title">Trusted by Builders,<br>Developers & Planners</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up delay-1">
+        <div class="stars">
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-text">Civil At Hand delivered our 20-storey structural design in record time with zero errors. Their AutoCAD drawings were impeccably detailed — saved us weeks on site. Truly a world-class team.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">RK</div>
+          <div>
+            <div class="testimonial-name">Rajesh Kumar</div>
+            <div class="testimonial-role">MD, Apex Builders Pvt Ltd</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up delay-2">
+        <div class="stars">
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-text">The STP design they provided was comprehensive, code-compliant, and optimized for our budget. Their responsiveness and technical depth exceeded all our expectations. Highly recommended!</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">PS</div>
+          <div>
+            <div class="testimonial-name">Priya Sharma</div>
+            <div class="testimonial-role">Project Director, GreenBuild Corp</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up delay-3">
+        <div class="stars">
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-text">We used Civil At Hand for a 50-acre township layout and the site planning was exceptional. Detailed, practical, and easy for our contractors to follow. Will definitely use them again.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AM</div>
+          <div>
+            <div class="testimonial-name">Arjun Mehta</div>
+            <div class="testimonial-role">CEO, Urban Lands Development</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REQUEST FORM -->
+<section class="section request-section" id="request">
+  <div class="section-inner">
+    <div class="request-inner">
+      <div class="request-info fade-left">
+        <div class="section-label">Get Started</div>
+        <h2 class="section-title">Request Engineering<br>Services</h2>
+        <p class="section-sub">Fill in the form and our team will reach out within 24 hours with a proposal tailored to your project needs.</p>
+        <div class="request-features">
+          <div class="request-feature">
+            <div class="request-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <div class="request-feature-title">Free Initial Consultation</div>
+              <div class="request-feature-desc">We assess your requirements at no cost before any commitment.</div>
+            </div>
+          </div>
+          <div class="request-feature">
+            <div class="request-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+            </div>
+            <div>
+              <div class="request-feature-title">File Upload Support</div>
+              <div class="request-feature-desc">Share DWG, PDF, and image files for detailed review.</div>
+            </div>
+          </div>
+          <div class="request-feature">
+            <div class="request-feature-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="request-feature-title">24hr Response Guarantee</div>
+              <div class="request-feature-desc">Our team responds within one business day, always.</div>
+            </div>
+          </div>
+          <div class="request-feature">
+            <div class="request-feature-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div>
+              <div class="request-feature-title">100% Confidential</div>
+              <div class="request-feature-desc">All project details are treated with strict confidentiality.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-right">
+        <div class="form-card" id="request-form-card">
+          <div id="form-content">
+            <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:800;margin-bottom:0.5rem">Submit Work Request</h3>
+            <p style="font-size:0.875rem;color:var(--text2);margin-bottom:2rem;font-weight:300">Tell us about your project and we'll connect you with the right engineer.</p>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Full Name *</label>
+                <input type="text" class="form-input" placeholder="John Doe" id="f-name"/>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone Number *</label>
+                <input type="tel" class="form-input" placeholder="+91 98765 43210" id="f-phone"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address *</label>
+              <input type="email" class="form-input" placeholder="john@company.com" id="f-email"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Service Required *</label>
+              <select class="form-select" id="f-service">
+                <option value="">Select a service...</option>
+                <option>AutoCAD Design</option>
+                <option>Structural Design</option>
+                <option>Estimation & Costing</option>
+                <option>Site Planning</option>
+                <option>Surveying</option>
+                <option>3D Modeling</option>
+                <option>Water Tank Design</option>
+                <option>STP Design</option>
+                <option>Multiple Services</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Project Location</label>
+                <input type="text" class="form-input" placeholder="City, State" id="f-location"/>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Budget Range</label>
+                <select class="form-select" id="f-budget">
+                  <option value="">Select range...</option>
+                  <option>Under ₹50,000</option>
+                  <option>₹50,000 – ₹2,00,000</option>
+                  <option>₹2,00,000 – ₹10,00,000</option>
+                  <option>₹10,00,000+</option>
+                  <option>Discuss with team</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Project Description *</label>
+              <textarea class="form-textarea" placeholder="Describe your project in detail — type of structure, dimensions, purpose, special requirements, timeline..." id="f-desc"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Upload Files (Optional)</label>
+              <div class="upload-area" id="upload-area" ondragover="event.preventDefault();this.classList.add('drag')" ondragleave="this.classList.remove('drag')" ondrop="handleDrop(event)" onclick="document.getElementById('f-file').click()">
+                <div class="upload-icon">📎</div>
+                <div class="upload-label">Drag & drop or click to upload</div>
+                <div class="upload-sub">DWG, PDF, JPG, PNG — Max 20MB each</div>
+                <input type="file" id="f-file" style="display:none" multiple accept=".dwg,.pdf,.jpg,.jpeg,.png" onchange="showFiles(this)"/>
+              </div>
+              <div id="file-list" style="margin-top:0.75rem;display:flex;flex-wrap:wrap;gap:0.5rem"></div>
+            </div>
+            <button class="form-submit" onclick="submitRequest()">
+              <svg style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Submit Work Request
+            </button>
+          </div>
+          <div class="success-state" id="form-success">
+            <div class="success-icon">✅</div>
+            <h3 class="success-title">Request Submitted!</h3>
+            <p class="success-desc">Thank you! Our team will review your project details and reach out within <strong>24 hours</strong> with a tailored proposal.<br><br>Reference ID: <strong style="color:var(--accent)">#CAH-<span id="ref-id"></span></strong></p>
+            <button class="btn-primary" style="margin:1.5rem auto 0;display:flex" onclick="resetForm()">Submit Another Request</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG / KNOWLEDGE HUB -->
+<section class="section" id="blog">
+  <div class="section-inner">
+    <div class="section-header center fade-up">
+      <div class="section-label">Knowledge Hub</div>
+      <h2 class="section-title">Civil Engineering<br>Insights & Guides</h2>
+      <p class="section-sub">Expert articles on structural engineering, construction tips, materials, codes, and industry trends.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card fade-up delay-1" onclick="openBlogModal('b1')">
+        <div class="blog-img" style="background:linear-gradient(135deg,var(--accent3),#e0e8ff)">
+          🏗️
+          <span class="blog-cat">Fundamentals</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-title">What is Civil Engineering? A Complete Overview</div>
+          <div class="blog-desc">Explore the branches, roles, and impact of civil engineering on modern infrastructure and society.</div>
+          <div class="blog-meta">
+            <span>📅 Mar 2024 &nbsp;•&nbsp; 6 min read</span>
+            <span class="blog-read">Read →</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card fade-up delay-2" onclick="openBlogModal('b2')">
+        <div class="blog-img" style="background:linear-gradient(135deg,#fff3cd,#ffeaa7)">
+          🏢
+          <span class="blog-cat" style="background:var(--gold)">Structures</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-title">Types of Structural Systems in Modern Buildings</div>
+          <div class="blog-desc">From frame structures to load-bearing walls — understand which system suits your building type.</div>
+          <div class="blog-meta">
+            <span>📅 Feb 2024 &nbsp;•&nbsp; 8 min read</span>
+            <span class="blog-read">Read →</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card fade-up delay-3" onclick="openBlogModal('b3')">
+        <div class="blog-img" style="background:linear-gradient(135deg,#d1f8ef,#a8ecd9)">
+          🧱
+          <span class="blog-cat" style="background:var(--green)">Materials</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-title">Construction Materials: Properties, Uses & Best Practices</div>
+          <div class="blog-desc">A technical guide to concrete, steel, timber, masonry — selecting the right materials for your project.</div>
+          <div class="blog-meta">
+            <span>📅 Jan 2024 &nbsp;•&nbsp; 10 min read</span>
+            <span class="blog-read">Read →</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card fade-up delay-1" onclick="openBlogModal('b4')">
+        <div class="blog-img" style="background:linear-gradient(135deg,#fde8ec,#f9bac8)">
+          📐
+          <span class="blog-cat" style="background:#e84393">Design</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-title">AutoCAD vs BIM: Which to Choose for Your Project?</div>
+          <div class="blog-desc">A practical comparison to help builders and developers decide between 2D drafting and full BIM workflows.</div>
+          <div class="blog-meta">
+            <span>📅 Dec 2023 &nbsp;•&nbsp; 5 min read</span>
+            <span class="blog-read">Read →</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card fade-up delay-2" onclick="openBlogModal('b5')">
+        <div class="blog-img" style="background:linear-gradient(135deg,var(--accent3),#c8d8ff)">
+          💰
+          <span class="blog-cat">Budgeting</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-title">How to Accurately Estimate Construction Costs in India</div>
+          <div class="blog-desc">Key factors, market rates, and methods for preparing a reliable BOQ and cost estimate for any project.</div>
+          <div class="blog-meta">
+            <span>📅 Nov 2023 &nbsp;•&nbsp; 7 min read</span>
+            <span class="blog-read">Read →</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card fade-up delay-3" onclick="openBlogModal('b6')">
+        <div class="blog-img" style="background:linear-gradient(135deg,#ede3ff,#d4b8ff)">
+          🌊
+          <span class="blog-cat" style="background:#8b5cf6">Water</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-title">STP vs ETP: Understanding Sewage Treatment Systems</div>
+          <div class="blog-desc">A simplified breakdown of sewage and effluent treatment plant types, design criteria, and regulatory requirements.</div>
+          <div class="blog-meta">
+            <span>📅 Oct 2023 &nbsp;•&nbsp; 9 min read</span>
+            <span class="blog-read">Read →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner fade-up">
+  <div class="cta-banner-bg"></div>
+  <div class="cta-banner-inner">
+    <h2 class="cta-banner-title">Ready to Build Something Extraordinary?</h2>
+    <p class="cta-banner-sub">Partner with Civil At Hand and bring your engineering vision to life — on time, within budget, and beyond expectations.</p>
+    <div class="cta-actions">
+      <a href="#request" class="btn-white">🚀 Start Your Project</a>
+      <a href="#contact" class="btn-white-outline">📞 Talk to an Engineer</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Contact Our Team</h2>
+      <p class="section-sub">Whether you have a project in mind or just a question — we're always here to help.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info fade-left">
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.38 2 2 0 0 1 3.56 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Phone / WhatsApp</div>
+            <div class="contact-item-value">+91 98765 43210</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">info@civilathand.com</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Office Address</div>
+            <div class="contact-item-value">42 Engineering Hub, Sector 5, Mumbai – 400001</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Working Hours</div>
+            <div class="contact-item-value">Mon – Sat: 9:00 AM – 7:00 PM</div>
+          </div>
+        </div>
+        <div class="form-card" style="margin-top:0.5rem">
+          <h4 style="font-family:var(--font-display);font-weight:700;margin-bottom:1.5rem;font-size:1.1rem">Send a Quick Message</h4>
+          <div class="form-group">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-input" placeholder="Your name" id="c-name"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-input" placeholder="your@email.com" id="c-email"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" placeholder="How can we help you?" style="min-height:90px" id="c-msg"></textarea>
+          </div>
+          <button class="form-submit" onclick="sendContactMsg()">Send Message</button>
+        </div>
+      </div>
+      <div class="fade-right">
+        <div class="map-embed">
+          <div class="map-grid"></div>
+          <div class="map-content">
+            <div class="map-icon">📍</div>
+            <div class="map-label">Civil At Hand HQ</div>
+            <div class="map-sub">42 Engineering Hub, Mumbai</div>
+            <button class="btn-primary" style="margin-top:1.25rem" onclick="window.open('https://maps.google.com','_blank')">
+              <svg style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Open in Maps
+            </button>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem">
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem;text-align:center">
+            <div style="font-size:2rem;margin-bottom:0.5rem">⚡</div>
+            <div style="font-family:var(--font-display);font-weight:700;font-size:0.95rem">Quick Quote</div>
+            <div style="font-size:0.8rem;color:var(--text2);margin-top:0.3rem">Get estimate in 2hrs</div>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem;text-align:center">
+            <div style="font-size:2rem;margin-bottom:0.5rem">📞</div>
+            <div style="font-family:var(--font-display);font-weight:700;font-size:0.95rem">Free Call</div>
+            <div style="font-size:0.8rem;color:var(--text2);margin-top:0.3rem">Book a 30min consult</div>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem;text-align:center">
+            <div style="font-size:2rem;margin-bottom:0.5rem">📩</div>
+            <div style="font-family:var(--font-display);font-weight:700;font-size:0.95rem">Email Support</div>
+            <div style="font-size:0.8rem;color:var(--text2);margin-top:0.3rem">Response in 24hrs</div>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem;text-align:center">
+            <div style="font-size:2rem;margin-bottom:0.5rem">🟢</div>
+            <div style="font-family:var(--font-display);font-weight:700;font-size:0.95rem">WhatsApp</div>
+            <div style="font-size:0.8rem;color:var(--text2);margin-top:0.3rem">Instant messaging</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" onclick="scrollToTop()">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21V11h6v10"/></svg>
+          </div>
+          Civil <span>At Hand</span>
+        </a>
+        <p class="footer-desc">World-class civil engineering services — precision, innovation, and reliability from concept to completion.</p>
+        <div class="footer-socials">
+          <a class="footer-social" href="#" title="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a class="footer-social" href="#" title="Twitter/X">
+            <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+          </a>
+          <a class="footer-social" href="#" title="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a class="footer-social" href="#" title="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <div class="footer-links">
+          <a href="#services" onclick="openServiceModal('autocad')">AutoCAD Design</a>
+          <a href="#services" onclick="openServiceModal('structural')">Structural Design</a>
+          <a href="#services" onclick="openServiceModal('estimation')">Estimation & Costing</a>
+          <a href="#services" onclick="openServiceModal('planning')">Site Planning</a>
+          <a href="#services" onclick="openServiceModal('surveying')">Surveying</a>
+          <a href="#services" onclick="openServiceModal('3d')">3D Modeling</a>
+          <a href="#services" onclick="openServiceModal('watertank')">Water Tank Design</a>
+          <a href="#services" onclick="openServiceModal('stp')">STP Design</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a href="#about">About Us</a>
+          <a href="#portfolio">Our Projects</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#blog">Knowledge Hub</a>
+          <a href="#process">How We Work</a>
+          <a href="#contact">Contact</a>
+          <a href="#request">Request Work</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Contact</div>
+        <div class="footer-links">
+          <a href="tel:+919876543210">📞 +91 98765 43210</a>
+          <a href="mailto:info@civilathand.com">✉️ info@civilathand.com</a>
+          <a href="#">📍 Mumbai, India</a>
+          <a href="#">🕐 Mon–Sat 9AM–7PM</a>
+        </div>
+        <div style="margin-top:1.5rem">
+          <a href="https://wa.me/919876543210" target="_blank" class="btn-primary" style="font-size:0.82rem;padding:0.6rem 1rem;background:#25D366">
+            <svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024 Civil At Hand. All rights reserved.</div>
+      <div style="display:flex;gap:1.5rem">
+        <a href="#" style="font-size:0.82rem;color:var(--text3);text-decoration:none">Privacy Policy</a>
+        <a href="#" style="font-size:0.82rem;color:var(--text3);text-decoration:none">Terms of Service</a>
+      </div>
+      <div class="footer-badge">Built with <span>❤️</span> for Civil Engineers</div>
+    </div>
+  </div>
+</footer>
+
+<!-- CHAT WIDGET -->
+<div class="chat-widget">
+  <div class="chat-window" id="chat-window">
+    <div class="chat-header">
+      <div class="chat-header-avatar">👷</div>
+      <div>
+        <div class="chat-header-name">Civil At Hand Support</div>
+        <div class="chat-header-status">● Online — Replies instantly</div>
+      </div>
+      <button class="chat-close" onclick="toggleChat()">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="chat-msg bot">👋 Hi! Welcome to Civil At Hand. How can we help with your project today?</div>
+      <div class="chat-msg bot">You can ask about our services, pricing, timeline, or request a free consultation!</div>
+    </div>
+    <div class="chat-quick" id="chat-quick">
+      <button class="chat-quick-btn" onclick="quickReply('Get a free quote')">💰 Free Quote</button>
+      <button class="chat-quick-btn" onclick="quickReply('What services do you offer?')">🔧 Services</button>
+      <button class="chat-quick-btn" onclick="quickReply('How long does a project take?')">⏱ Timeline</button>
+    </div>
+    <div class="chat-input-row">
+      <input class="chat-input" id="chat-input" placeholder="Type your message..." onkeydown="if(event.key==='Enter')sendChat()"/>
+      <button class="chat-send" onclick="sendChat()">
+        <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+  <button class="chat-btn" onclick="toggleChat()" id="chat-toggle-btn">
+    <svg id="chat-icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <svg id="chat-close-icon" style="display:none" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    <span class="chat-badge">1</span>
+  </button>
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919876543210" target="_blank" class="wa-btn" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- SCROLL TOP -->
+<button class="scroll-top" id="scroll-top" onclick="scrollToTop()">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- SERVICE MODAL -->
+<div class="modal-overlay" id="service-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('service-modal').classList.remove('open')">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div id="service-modal-content"></div>
+  </div>
+</div>
+
+<!-- PROJECT MODAL -->
+<div class="modal-overlay" id="project-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('project-modal').classList.remove('open')">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div id="project-modal-content"></div>
+  </div>
+</div>
+
+<!-- BLOG MODAL -->
+<div class="modal-overlay" id="blog-modal">
+  <div class="modal" style="max-width:680px">
+    <button class="modal-close" onclick="document.getElementById('blog-modal').classList.remove('open')">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div id="blog-modal-content"></div>
+  </div>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="modal-overlay" id="auth-modal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal" style="max-width:460px">
+    <button class="modal-close" onclick="document.getElementById('auth-modal').classList.remove('open')">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div style="font-size:2.5rem;margin-bottom:0.75rem">👷‍♂️</div>
+    <div class="modal-title">Welcome Back</div>
+    <div class="auth-tabs">
+      <button class="auth-tab active" onclick="switchAuth('login',this)">Sign In</button>
+      <button class="auth-tab" onclick="switchAuth('signup',this)">Create Account</button>
+    </div>
+    <div class="auth-form active" id="auth-login">
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" placeholder="your@email.com" id="l-email"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-input" placeholder="••••••••" id="l-pass"/>
+      </div>
+      <button class="form-submit" onclick="doLogin()">Sign In to Dashboard</button>
+      <p style="text-align:center;font-size:0.82rem;color:var(--text3);margin-top:1rem">Forgot password? <a href="#" style="color:var(--accent)">Reset here</a></p>
+    </div>
+    <div class="auth-form" id="auth-signup">
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">First Name</label><input type="text" class="form-input" placeholder="John"/></div>
+        <div class="form-group"><label class="form-label">Last Name</label><input type="text" class="form-input" placeholder="Doe"/></div>
+      </div>
+      <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" placeholder="john@company.com"/></div>
+      <div class="form-group"><label class="form-label">Phone</label><input type="tel" class="form-input" placeholder="+91 98765 43210"/></div>
+      <div class="form-group"><label class="form-label">Password</label><input type="password" class="form-input" placeholder="Create a strong password"/></div>
+      <button class="form-submit" onclick="doSignup()">Create Free Account</button>
+    </div>
+  </div>
+</div>
+
+<!-- DASHBOARD MODAL -->
+<div class="modal-overlay dashboard-modal" id="dashboard-modal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('dashboard-modal').classList.remove('open')">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="dash-header">
+      <div>
+        <div class="dash-welcome">👋 Welcome back, <span id="dash-name">Engineer</span></div>
+        <div class="dash-sub">Here's your project dashboard</div>
+      </div>
+      <button class="btn-primary" onclick="document.getElementById('dashboard-modal').classList.remove('open');document.getElementById('request').scrollIntoView({behavior:'smooth'})">+ New Request</button>
+    </div>
+    <div class="dash-stats">
+      <div class="dash-stat"><div class="dash-stat-num" style="color:var(--accent)">3</div><div class="dash-stat-lbl">Active</div></div>
+      <div class="dash-stat"><div class="dash-stat-num" style="color:var(--green)">7</div><div class="dash-stat-lbl">Completed</div></div>
+      <div class="dash-stat"><div class="dash-stat-num" style="color:var(--gold)">2</div><div class="dash-stat-lbl">In Review</div></div>
+      <div class="dash-stat"><div class="dash-stat-num">12</div><div class="dash-stat-lbl">Total</div></div>
+    </div>
+    <div style="font-family:var(--font-display);font-weight:700;font-size:1rem;margin-bottom:1rem">Recent Requests</div>
+    <div class="dash-requests">
+      <div class="dash-req">
+        <div class="dash-req-dot" style="background:var(--accent)"></div>
+        <div style="flex:1"><div class="dash-req-name">Office Building – G+5 Structure</div><div class="dash-req-type">Structural Design + AutoCAD</div></div>
+        <span class="dash-req-status progress">In Progress</span>
+      </div>
+      <div class="dash-req">
+        <div class="dash-req-dot" style="background:var(--gold)"></div>
+        <div style="flex:1"><div class="dash-req-name">Residential Compound Survey</div><div class="dash-req-type">Topographic Surveying</div></div>
+        <span class="dash-req-status review">Under Review</span>
+      </div>
+      <div class="dash-req">
+        <div class="dash-req-dot" style="background:var(--green)"></div>
+        <div style="flex:1"><div class="dash-req-name">Water Tank – 1 Lakh Litre</div><div class="dash-req-type">Water Tank Design</div></div>
+        <span class="dash-req-status complete">Completed</span>
+      </div>
+      <div class="dash-req">
+        <div class="dash-req-dot" style="background:var(--green)"></div>
+        <div style="flex:1"><div class="dash-req-name">Township BOQ Estimation</div><div class="dash-req-type">Estimation & Costing</div></div>
+        <span class="dash-req-status complete">Completed</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============ DATA ============
+const serviceData = {
+  autocad: {
+    icon:'📐', title:'AutoCAD Design',
+    desc:'Professional 2D drafting and technical drawing services for all civil and structural applications.',
+    details:`<h4>What's Included</h4><ul><li>Architectural floor plans, elevations, and sections</li><li>Structural layout drawings with reinforcement details</li><li>Utility plans (electrical, plumbing, drainage)</li><li>Site plans and topography drawings</li><li>As-built drawings and construction documents</li><li>ISO-standard title blocks and layers</li></ul><h4>Deliverables</h4><ul><li>DWG, DXF, and PDF formats</li><li>Plotted hard copies if required</li><li>Unlimited minor revisions within scope</li></ul><h4>Turnaround</h4><ul><li>Residential (2–5 days), Commercial (5–10 days), Industrial (7–15 days)</li></ul>`
+  },
+  structural: {
+    icon:'🏗️', title:'Structural Design',
+    desc:'Comprehensive structural analysis and design for safe, efficient, and code-compliant buildings.',
+    details:`<h4>Services Covered</h4><ul><li>RCC framed structure design (IS 456)</li><li>Steel structure design (IS 800)</li><li>Foundation design (isolated, raft, pile)</li><li>Retaining wall and shear wall design</li><li>Earthquake-resistant design (IS 1893)</li><li>STAAD.Pro / ETABS analysis reports</li></ul><h4>Deliverables</h4><ul><li>Structural drawings with bar bending schedule</li><li>Design calculations report</li><li>Soil bearing capacity recommendations</li></ul>`
+  },
+  estimation: {
+    icon:'💰', title:'Estimation & Costing',
+    desc:'Accurate quantity surveying and cost estimation for precise project financial planning.',
+    details:`<h4>Services</h4><ul><li>Detailed Bill of Quantities (BOQ)</li><li>Material take-off from drawings</li><li>Labour and equipment cost estimation</li><li>Market rate analysis</li><li>Tender document preparation</li><li>Value engineering suggestions</li></ul><h4>Reports</h4><ul><li>Excel-based itemized cost sheets</li><li>Comparative analysis of alternatives</li><li>Phase-wise cash flow projections</li></ul>`
+  },
+  planning: {
+    icon:'🗺️', title:'Site Planning',
+    desc:'Master planning and site layout design for optimal land use and development.',
+    details:`<h4>Services</h4><ul><li>Topography and site analysis</li><li>Land use and zoning compliance</li><li>Road network and traffic planning</li><li>Green space and landscape planning</li><li>Drainage and stormwater management</li><li>Municipal approval drawings</li></ul>`
+  },
+  surveying: {
+    icon:'🔭', title:'Surveying',
+    desc:'Precise field surveys using modern GPS and total station equipment.',
+    details:`<h4>Survey Types</h4><ul><li>Topographic (contour) surveys</li><li>Boundary and cadastral surveys</li><li>Setting out / layout surveys</li><li>Cross-section surveys for roads</li><li>Volumetric surveys for earthworks</li><li>Drone photogrammetry surveys</li></ul><h4>Equipment Used</h4><ul><li>Total Station (Leica/Trimble)</li><li>GPS/GNSS receivers</li><li>UAV/Drone for aerial mapping</li></ul>`
+  },
+  '3d': {
+    icon:'🧊', title:'3D Modeling & Visualization',
+    desc:'Photorealistic 3D models and BIM for design validation and client presentations.',
+    details:`<h4>Services</h4><ul><li>3D architectural modeling (Revit / SketchUp)</li><li>Structural BIM models (Revit Structure)</li><li>Photorealistic rendering (Lumion / V-Ray)</li><li>Walkthrough animations</li><li>3D printing-ready models</li><li>Clash detection reports</li></ul>`
+  },
+  watertank: {
+    icon:'🛢️', title:'Water Tank Design',
+    desc:'Structural design of water storage tanks of all types and capacities.',
+    details:`<h4>Tank Types</h4><ul><li>Overhead (OHT) RCC tanks – up to 5 Lakh litres</li><li>Underground (UGT) water reservoirs</li><li>Elevated steel tanks</li><li>Sump and pump house design</li><li>Intze and circular type tanks</li></ul><h4>Standards Followed</h4><ul><li>IS 3370 (Water Retaining Structures)</li><li>IS 456 for RCC components</li><li>CPHEEO guidelines</li></ul>`
+  },
+  stp: {
+    icon:'🌊', title:'STP Design',
+    desc:'Complete Sewage Treatment Plant design for residential, commercial, and industrial projects.',
+    details:`<h4>Design Components</h4><ul><li>Flow rate calculations and hydraulic design</li><li>SBR, MBR, MBBR technology selection</li><li>Civil drawings for treatment chambers</li><li>Equipment specifications and P&ID</li><li>Treated water reuse planning</li><li>CPCB / SPCB compliance documentation</li></ul><h4>Capacities Handled</h4><ul><li>50 KLD to 5 MLD and beyond</li></ul>`
+  }
+};
+
+const projectData = {
+  p1:{title:'Riverside Pedestrian Bridge',icon:'🌉',location:'Mumbai, Maharashtra',year:'2023',type:'Structural Design + AutoCAD',details:'A 120m span pedestrian bridge across the Ulhas river. The project involved complete structural analysis using STAAD.Pro, AutoCAD drawings, and coordination with the municipal corporation for approval. Steel box girder design with a precast concrete deck.'},
+  p2:{title:'Metro Water Treatment Plant',icon:'🏭',location:'Delhi NCR',year:'2023',type:'STP Design + Site Planning',details:'A 2 MLD capacity sewage treatment plant using SBR technology. Project included site planning, civil drawings, hydraulic design, and regulatory approval support. Achieved CPCB Class B treated water standards.'},
+  p3:{title:'Corporate Tower G+20',icon:'🏢',location:'Pune, Maharashtra',year:'2024 (Ongoing)',type:'3D Modeling + Estimation',details:'20-storey commercial office tower with a 3-level basement car park. Services included complete BIM model, structural design, BOQ estimation, and phased construction schedule. Estimated project cost: ₹45 Crore.'},
+  p4:{title:'Township Master Plan – 50 Acres',icon:'🏘️',location:'Bangalore, Karnataka',year:'2022',type:'Site Planning + Surveying',details:'Master planning for a 50-acre integrated township with 800 residential units, commercial hub, and green spaces. Full topographic survey, road network design, drainage master plan, and BMRDA approval drawings.'},
+  p5:{title:'2 ML Elevated Water Tower',icon:'🛢️',location:'Hyderabad, Telangana',year:'2023',type:'Water Tank Design + Structural',details:'Intze-type elevated water tower with 20 lakh litre capacity on a 30m supporting structure. Full IS 3370 compliance, foundation design on pile caps, and hydraulic network integration for the housing colony.'},
+  p6:{title:'Highway Bypass – 18km',icon:'🛣️',location:'Chennai, Tamil Nadu',year:'2022',type:'Road Design + Drainage',details:'18km two-lane bypass highway design including geometric alignment, cross-section design, culvert structures, and stormwater drainage. Prepared DPR-level drawings and cost estimate for TNRDC submission.'}
+};
+
+const blogData = {
+  b1:{title:'What is Civil Engineering? A Complete Overview',cat:'Fundamentals',icon:'🏗️',content:`<p>Civil engineering is one of the oldest and broadest engineering disciplines, responsible for the design, construction, and maintenance of the built environment — roads, bridges, buildings, water systems, and more.</p><h4>Main Branches</h4><ul><li><strong>Structural Engineering:</strong> Design of load-bearing structures</li><li><strong>Geotechnical Engineering:</strong> Soil and foundation analysis</li><li><strong>Transportation Engineering:</strong> Roads, highways, railways</li><li><strong>Environmental Engineering:</strong> Water, wastewater, pollution control</li><li><strong>Construction Management:</strong> Planning and executing projects</li></ul><h4>Role in Society</h4><p>Civil engineers design the infrastructure that supports modern life. Every road you drive on, every building you work in, and every water tap you use — civil engineers made it possible.</p><h4>Career & Scope</h4><p>With rapid urbanization globally, civil engineering remains one of the most in-demand professions. The BIM revolution, sustainable construction, and smart cities are opening entirely new frontiers.</p>`},
+  b2:{title:'Types of Structural Systems in Modern Buildings',cat:'Structures',icon:'🏢',content:`<p>Choosing the right structural system is one of the most critical decisions in building design. It affects cost, construction time, architectural flexibility, and long-term performance.</p><h4>1. Load-Bearing Wall System</h4><p>Traditional masonry walls carry loads directly to the foundation. Best for low-rise (G+2) residential buildings. Low cost, but limited in span and height.</p><h4>2. RCC Frame Structure</h4><p>Beams, columns, and slabs form a reinforced concrete skeleton. Most common in India. Offers flexibility, durability, and is suitable from G+1 to G+40+.</p><h4>3. Steel Frame Structure</h4><p>Hot-rolled or fabricated steel sections. Used in industrial buildings, warehouses, and high-rises. Faster construction, lighter weight, higher cost.</p><h4>4. Pre-Engineered Buildings (PEB)</h4><p>Factory-fabricated steel components assembled on site. Best for large-span industrial and commercial structures.</p><h4>5. Flat Plate / Flat Slab</h4><p>No beams — slabs connect directly to columns. Clean ceiling with maximum floor-to-floor clearance. Common in parking structures and commercial buildings.</p>`},
+  b3:{title:'Construction Materials: Properties, Uses & Best Practices',cat:'Materials',icon:'🧱',content:`<p>Material selection significantly impacts structural integrity, durability, sustainability, and project cost. Here's a professional overview of the most important construction materials.</p><h4>Concrete</h4><p>The world's most widely used construction material. Key parameters: grade (M15 to M60+), water-cement ratio, aggregate size, admixtures. Use M25 minimum for RCC structural members.</p><h4>Steel (Reinforcement)</h4><p>Fe415 and Fe500 TMT bars are standard in India. Fe500D preferred in seismic zones for better ductility. Always check mill test certificates and BIS marks.</p><h4>Bricks & Blocks</h4><p>Fly ash bricks offer better thermal insulation and uniformity than traditional red bricks. AAC blocks are ultra-lightweight and excellent for non-load-bearing partitions.</p><h4>Waterproofing Materials</h4><p>Critical for basements, terraces, and wet areas. Options: crystalline, polymer-modified cementitious, APP/SBS membranes, PU coatings. Never skip waterproofing in foundation work.</p><h4>Best Practices</h4><ul><li>Always test materials at certified labs</li><li>Follow IS codes for mix design</li><li>Store cement properly — use within 3 months</li><li>Ensure proper curing (minimum 7 days for columns, 14 days for slabs)</li></ul>`},
+  b4:{title:'AutoCAD vs BIM: Which to Choose for Your Project?',cat:'Design',icon:'📐',content:`<p>Both AutoCAD and BIM (Building Information Modeling) are essential tools in modern civil engineering. Choosing the right one depends on project size, complexity, and budget.</p><h4>AutoCAD – 2D Drafting</h4><p>AutoCAD produces precise 2D technical drawings. It's the industry standard for construction documents, still used by the vast majority of engineering offices in India. Best for: simple projects, permit drawings, standard residential work.</p><h4>BIM (Revit, Tekla, etc.) – 3D Intelligence</h4><p>BIM creates intelligent 3D models where every element carries data — dimensions, materials, costs, schedules. Changes update automatically across all views.</p><h4>Key Differences</h4><ul><li><strong>Coordination:</strong> BIM enables multi-discipline clash detection; AutoCAD requires manual coordination</li><li><strong>Cost:</strong> AutoCAD is significantly more affordable</li><li><strong>Learning curve:</strong> AutoCAD is faster to learn</li><li><strong>Output quality:</strong> BIM produces superior visualizations and quantity reports</li></ul><h4>Our Recommendation</h4><p>For residential and small commercial projects: AutoCAD is sufficient and cost-effective. For large commercial, institutional, or infrastructure projects: BIM provides measurable ROI through error reduction and coordination efficiency.</p>`},
+  b5:{title:'How to Accurately Estimate Construction Costs in India',cat:'Budgeting',icon:'💰',content:`<p>Accurate cost estimation is the backbone of successful project delivery. Poor estimates lead to cost overruns, disputes, and project failure.</p><h4>Key Components of a Good Estimate</h4><ul><li>Detailed quantity take-off from approved drawings</li><li>Current market rates (DSR / PWD Schedule of Rates or direct market inquiry)</li><li>Labour productivity factors</li><li>Overhead and profit margins (typically 15–20%)</li><li>Contingency provision (5–10% for civil works)</li></ul><h4>Estimation Methods</h4><p><strong>Plinth Area Rate:</strong> Quick approximation — ₹1,800 to ₹4,500/sqft depending on specification and location. Good for preliminary budgeting only.</p><p><strong>Detailed Estimate (BOQ):</strong> Item-by-item measurement and pricing. Most accurate method. Required for tenders and loan applications.</p><h4>Current Cost Benchmarks (2024)</h4><ul><li>Basic residential construction: ₹1,800–2,500/sqft</li><li>Good quality residential: ₹2,500–3,500/sqft</li><li>Premium residential: ₹3,500–5,000/sqft</li><li>Commercial (basic): ₹2,000–3,000/sqft</li></ul>`},
+  b6:{title:'STP vs ETP: Understanding Sewage Treatment Systems',cat:'Water',icon:'🌊',content:`<p>Wastewater treatment is a regulatory requirement for most large buildings and industrial facilities in India. Understanding the types of systems helps in making the right design decision.</p><h4>STP – Sewage Treatment Plant</h4><p>Treats domestic sewage (black water + grey water) from residential, commercial, and institutional buildings. Required for buildings above a certain capacity under most state building bylaws.</p><h4>ETP – Effluent Treatment Plant</h4><p>Treats industrial wastewater containing chemicals, heavy metals, or other hazardous substances. Mandatory for industries under the Water Act, 1974.</p><h4>Common STP Technologies</h4><ul><li><strong>SBR (Sequential Batch Reactor):</strong> Most popular, space-efficient, reliable</li><li><strong>MBR (Membrane Bioreactor):</strong> Premium quality treated water suitable for reuse</li><li><strong>MBBR (Moving Bed Biofilm Reactor):</strong> Good for retrofitting existing systems</li><li><strong>Activated Sludge Process (ASP):</strong> Traditional, cost-effective for large capacities</li></ul><h4>Regulatory Standards</h4><p>CPCB norms for treated water discharge: BOD < 30 mg/L, TSS < 100 mg/L, pH 5.5–9.0. For reuse in flushing/irrigation, stricter Class B standards apply.</p>`}
+};
+
+// ============ LOADER ============
+window.addEventListener('load',()=>{
+  setTimeout(()=>{document.getElementById('page-loader').classList.add('hide')},1900);
+});
+
+// ============ NAV SCROLL ============
+window.addEventListener('scroll',()=>{
+  const nav=document.getElementById('main-nav');
+  if(window.scrollY>50)nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+  const st=document.getElementById('scroll-top');
+  if(window.scrollY>400)st.classList.add('show');
+  else st.classList.remove('show');
+});
+
+function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'});}
+
+// ============ THEME ============
+let isDark=localStorage.getItem('cah-theme')==='dark';
+function applyTheme(){
+  document.documentElement.setAttribute('data-theme',isDark?'dark':'light');
+  document.getElementById('sun-icon').style.display=isDark?'none':'block';
+  document.getElementById('moon-icon').style.display=isDark?'block':'none';
+}
+applyTheme();
+document.getElementById('theme-toggle').addEventListener('click',()=>{
+  isDark=!isDark;
+  localStorage.setItem('cah-theme',isDark?'dark':'light');
+  applyTheme();
+});
+
+// ============ MOBILE MENU ============
+let menuOpen=false;
+function toggleMenu(){
+  menuOpen=!menuOpen;
+  document.getElementById('mobile-menu').classList.toggle('open',menuOpen);
+  document.body.style.overflow=menuOpen?'hidden':'';
+}
+
+// ============ SCROLL ANIMATIONS ============
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      if(e.target.querySelector('.counter')){
+        e.target.querySelectorAll('.counter').forEach(c=>animateCounter(c));
+      }
+      if(e.target.classList.contains('counter')){animateCounter(e.target);}
+    }
+  });
+},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up,.fade-left,.fade-right,.scale-in').forEach(el=>observer.observe(el));
+
+// ============ COUNTER ============
+function animateCounter(el){
+  if(el.dataset.done)return;
+  el.dataset.done='1';
+  const target=+el.dataset.target;
+  const duration=1800;
+  const start=performance.now();
+  const suffix=el.dataset.suffix||'';
+  function step(now){
+    const progress=Math.min((now-start)/duration,1);
+    const ease=1-Math.pow(1-progress,3);
+    el.textContent=Math.round(ease*target)+suffix;
+    if(progress<1)requestAnimationFrame(step);
+    else el.textContent=target+suffix;
+  }
+  requestAnimationFrame(step);
+}
+// Observe stat counters
+document.querySelectorAll('.counter').forEach(el=>{
+  const parent=el.closest('.fade-up')||el;
+  observer.observe(parent);
+});
+
+// ============ SERVICE MODAL ============
+function openServiceModal(key){
+  const s=serviceData[key];
+  if(!s)return;
+  document.getElementById('service-modal-content').innerHTML=`
+    <div class="modal-icon">${s.icon}</div>
+    <div class="modal-title">${s.title}</div>
+    <p style="color:var(--text2);font-size:0.9rem;margin-bottom:1.5rem;font-weight:300">${s.desc}</p>
+    <div class="modal-body">${s.details}</div>
+    <a href="#request" class="btn-primary" style="margin-top:2rem;display:inline-flex" onclick="document.getElementById('service-modal').classList.remove('open');document.getElementById('f-service').value='${s.title}'">Request This Service →</a>
+  `;
+  document.getElementById('service-modal').classList.add('open');
+}
+
+// ============ PROJECT MODAL ============
+function openProjectModal(key){
+  const p=projectData[key];
+  if(!p)return;
+  document.getElementById('project-modal-content').innerHTML=`
+    <div style="font-size:3rem;margin-bottom:1rem">${p.icon}</div>
+    <div class="modal-title">${p.title}</div>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem">
+      <span style="font-size:0.82rem;background:var(--accent3);color:var(--accent);padding:0.3rem 0.7rem;border-radius:99px;font-weight:600">📍 ${p.location}</span>
+      <span style="font-size:0.82rem;background:var(--bg2);color:var(--text2);padding:0.3rem 0.7rem;border-radius:99px;font-weight:600">📅 ${p.year}</span>
+      <span style="font-size:0.82rem;background:var(--bg2);color:var(--text2);padding:0.3rem 0.7rem;border-radius:99px;font-weight:600">🔧 ${p.type}</span>
+    </div>
+    <div class="modal-body"><p>${p.details}</p></div>
+    <a href="#request" class="btn-primary" style="margin-top:2rem;display:inline-flex" onclick="document.getElementById('project-modal').classList.remove('open')">Start Similar Project →</a>
+  `;
+  document.getElementById('project-modal').classList.add('open');
+}
+
+// ============ BLOG MODAL ============
+function openBlogModal(key){
+  const b=blogData[key];
+  if(!b)return;
+  document.getElementById('blog-modal-content').innerHTML=`
+    <div style="font-size:3rem;margin-bottom:0.75rem">${b.icon}</div>
+    <span style="font-size:0.78rem;background:var(--accent);color:#fff;padding:0.3rem 0.7rem;border-radius:99px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em">${b.cat}</span>
+    <div class="modal-title" style="margin-top:1rem">${b.title}</div>
+    <div class="modal-body" style="margin-top:1rem">${b.content}</div>
+    <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+      <span style="font-size:0.82rem;color:var(--text3)">By <strong>Civil At Hand Engineering Team</strong></span>
+      <a href="#request" class="btn-primary" style="font-size:0.85rem;padding:0.6rem 1.25rem" onclick="document.getElementById('blog-modal').classList.remove('open')">Get Expert Consultation →</a>
+    </div>
+  `;
+  document.getElementById('blog-modal').classList.add('open');
+}
+
+// ============ PORTFOLIO FILTER ============
+function filterPortfolio(cat,btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.portfolio-card').forEach(card=>{
+    if(cat==='all'||card.dataset.cat===cat){
+      card.style.display='';
+      card.style.opacity='0';
+      card.style.transform='translateY(20px)';
+      setTimeout(()=>{card.style.transition='all 0.4s ease';card.style.opacity='1';card.style.transform='translateY(0)'},50);
+    } else {
+      card.style.opacity='0';
+      card.style.transform='translateY(20px)';
+      setTimeout(()=>card.style.display='none',350);
+    }
+  });
+}
+
+// ============ FORM ============
+function submitRequest(){
+  const name=document.getElementById('f-name').value.trim();
+  const phone=document.getElementById('f-phone').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const service=document.getElementById('f-service').value;
+  const desc=document.getElementById('f-desc').value.trim();
+  if(!name||!phone||!email||!service||!desc){
+    showToast('⚠️ Please fill all required fields','#e17055');return;
+  }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    showToast('⚠️ Please enter a valid email','#e17055');return;
+  }
+  const btn=document.querySelector('.form-submit');
+  btn.innerHTML='<span class="loader-dots">Submitting</span>...';
+  btn.disabled=true;
+  setTimeout(()=>{
+    document.getElementById('form-content').style.display='none';
+    document.getElementById('form-success').classList.add('show');
+    document.getElementById('ref-id').textContent=Math.random().toString(36).substr(2,6).toUpperCase();
+  },1800);
+}
+function resetForm(){
+  document.getElementById('f-name').value='';
+  document.getElementById('f-phone').value='';
+  document.getElementById('f-email').value='';
+  document.getElementById('f-service').value='';
+  document.getElementById('f-desc').value='';
+  document.getElementById('f-location').value='';
+  document.getElementById('f-budget').value='';
+  document.getElementById('file-list').innerHTML='';
+  document.getElementById('form-content').style.display='';
+  document.getElementById('form-success').classList.remove('show');
+  const btn=document.querySelector('.form-submit');
+  btn.innerHTML='<svg style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>Submit Work Request';
+  btn.disabled=false;
+}
+function showFiles(input){
+  const list=document.getElementById('file-list');
+  list.innerHTML='';
+  Array.from(input.files).forEach(f=>{
+    const tag=document.createElement('span');
+    tag.style.cssText='background:var(--accent3);color:var(--accent);border:1px solid rgba(26,79,214,0.2);padding:0.3rem 0.75rem;border-radius:99px;font-size:0.78rem;font-weight:600;display:inline-flex;align-items:center;gap:0.3rem';
+    tag.innerHTML=`📎 ${f.name.length>20?f.name.substring(0,20)+'...':f.name}`;
+    list.appendChild(tag);
+  });
+}
+function handleDrop(e){
+  e.preventDefault();
+  document.getElementById('upload-area').classList.remove('drag');
+  const files=e.dataTransfer.files;
+  if(files.length){const d=document.getElementById('f-file');const dt=new DataTransfer();Array.from(files).forEach(f=>dt.items.add(f));d.files=dt.files;showFiles(d);}
+}
+
+// ============ CONTACT FORM ============
+function sendContactMsg(){
+  const name=document.getElementById('c-name').value.trim();
+  const email=document.getElementById('c-email').value.trim();
+  const msg=document.getElementById('c-msg').value.trim();
+  if(!name||!email||!msg){showToast('⚠️ Please fill all fields','#e17055');return;}
+  showToast('✅ Message sent! We\'ll reply within 24 hours.','var(--green)');
+  document.getElementById('c-name').value='';
+  document.getElementById('c-email').value='';
+  document.getElementById('c-msg').value='';
+}
+
+// ============ AUTH ============
+function switchAuth(tab,btn){
+  document.querySelectorAll('.auth-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.auth-form').forEach(f=>f.classList.remove('active'));
+  document.getElementById('auth-'+tab).classList.add('active');
+}
+function doLogin(){
+  const email=document.getElementById('l-email').value.trim();
+  const pass=document.getElementById('l-pass').value;
+  if(!email||!pass){showToast('⚠️ Please enter email and password','#e17055');return;}
+  const name=email.split('@')[0].replace(/[._]/g,' ');
+  document.getElementById('auth-modal').classList.remove('open');
+  document.getElementById('dash-name').textContent=name.charAt(0).toUpperCase()+name.slice(1);
+  document.getElementById('dashboard-modal').classList.add('open');
+  // Update nav button
+  document.querySelector('.btn-nav-cta').innerHTML='<svg style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Dashboard';
+  document.querySelector('.btn-nav-cta').onclick=()=>document.getElementById('dashboard-modal').classList.add('open');
+}
+function doSignup(){
+  showToast('✅ Account created! Welcome to Civil At Hand.','var(--green)');
+  document.getElementById('auth-modal').classList.remove('open');
+}
+
+// ============ CHAT ============
+let chatOpen=false;
+const chatResponses={
+  'get a free quote':'Sure! Please describe your project briefly and we\'ll prepare a quote within 2 hours. Or fill the Request Form on this page! 📋',
+  'what services do you offer?':'We offer: AutoCAD Design, Structural Design, Estimation & Costing, Site Planning, Surveying, 3D Modeling, Water Tank Design, and STP Design. Which one interests you? 🔧',
+  'how long does a project take?':'Timelines vary by project: Simple AutoCAD drawings (2-5 days), Structural design (5-15 days), Full project design (2-8 weeks). We always provide an upfront schedule. ⏱',
+  default:'Thanks for reaching out! Our engineers will respond shortly. For urgent queries, call +91 98765 43210 or WhatsApp us. 👷'
+};
+function toggleChat(){
+  chatOpen=!chatOpen;
+  document.getElementById('chat-window').classList.toggle('open',chatOpen);
+  document.getElementById('chat-icon').style.display=chatOpen?'none':'block';
+  document.getElementById('chat-close-icon').style.display=chatOpen?'block':'none';
+  if(chatOpen){const badge=document.querySelector('.chat-badge');if(badge)badge.remove();}
+}
+function sendChat(){
+  const input=document.getElementById('chat-input');
+  const msg=input.value.trim();
+  if(!msg)return;
+  addChatMsg(msg,'user');
+  input.value='';
+  const key=msg.toLowerCase();
+  const reply=chatResponses[key]||chatResponses['default'];
+  setTimeout(()=>addChatMsg(reply,'bot'),900);
+}
+function quickReply(msg){
+  addChatMsg(msg,'user');
+  const key=msg.toLowerCase();
+  const reply=chatResponses[key]||chatResponses['default'];
+  document.getElementById('chat-quick').style.display='none';
+  setTimeout(()=>addChatMsg(reply,'bot'),900);
+}
+function addChatMsg(text,role){
+  const container=document.getElementById('chat-messages');
+  const msg=document.createElement('div');
+  msg.className=`chat-msg ${role}`;
+  msg.textContent=text;
+  container.appendChild(msg);
+  container.scrollTop=container.scrollHeight;
+}
+
+// ============ TOAST ============
+function showToast(msg,bg='var(--accent)'){
+  const existing=document.querySelector('.toast');
+  if(existing)existing.remove();
+  const t=document.createElement('div');
+  t.className='toast';
+  t.style.cssText=`position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:${bg};color:#fff;padding:0.875rem 1.75rem;border-radius:12px;font-size:0.9rem;font-weight:600;z-index:9999;box-shadow:0 8px 24px rgba(0,0,0,0.2);transition:all 0.3s;white-space:nowrap`;
+  t.textContent=msg;
+  document.body.appendChild(t);
+  setTimeout(()=>{t.style.opacity='0';t.style.transform='translateX(-50%) translateY(10px)';setTimeout(()=>t.remove(),300)},3500);
+}
+
+// ============ CLOSE MODALS ON OVERLAY ============
+['service-modal','project-modal','blog-modal'].forEach(id=>{
+  document.getElementById(id).addEventListener('click',function(e){
+    if(e.target===this)this.classList.remove('open');
+  });
+});
+
+// ============ ESCAPE KEY ============
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    document.querySelectorAll('.modal-overlay.open').forEach(m=>m.classList.remove('open'));
+    if(menuOpen)toggleMenu();
+  }
+});
+
+// Smooth anchor scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href').substring(1);
+    if(id){
+      const target=document.getElementById(id);
+      if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth'});}
+    }
+  });
+});
+</script>
+</body>
+</html>
